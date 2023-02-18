@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
-        clearInventory();
+        ClearInventory();
 
     }
 
@@ -52,12 +52,12 @@ public class PlayerController : MonoBehaviour
         return inventory;
     }
 
-    public void clearInventory()
+    public void ClearInventory()
     {
         inventory = 0;
     }
 
-    public void addInventory(int count)
+    public void AddInventory(int count)
     {
         inventory += count;
     }
