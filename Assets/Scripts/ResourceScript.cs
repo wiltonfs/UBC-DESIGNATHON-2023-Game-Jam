@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ResourceScript : MonoBehaviour
 {
-    [SerializeField] private float xRange = 10;
-    [SerializeField] private float yRange = 10;
+    [SerializeField] private int resourceValue = 1;
+    [SerializeField] private Vector2 spawnRange;
 
     private PlayerController player;
 
@@ -25,12 +25,12 @@ public class ResourceScript : MonoBehaviour
 
     private void Spawn()
     {
-        this.transform.position = new Vector2(Random.Range(-1 * xRange, xRange), Random.Range(-1 * yRange, yRange));
+        this.transform.position = new Vector2(Random.Range(-1 * spawnRange.x, spawnRange.x), Random.Range(-1 * spawnRange.y, spawnRange.y));
     }
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        player.addInventory(1);
+        player.AddInventory(resourceValue);
 
         Spawn();
         //Add score

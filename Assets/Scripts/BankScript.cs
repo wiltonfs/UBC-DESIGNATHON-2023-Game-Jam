@@ -5,13 +5,15 @@ using UnityEngine;
 public class BankScript : MonoBehaviour
 {
     private PlayerController player;
-    private int homeScore;
+    private TimeController timeController;
+    private int bankedValue;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        homeScore = 0;
+        timeController = GameObject.Find("TimeController").GetComponent<TimeController>();
+        bankedValue = 0;
 
     }
 
@@ -24,11 +26,9 @@ public class BankScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
-        homeScore += player.GetInventory();
-        player.clearInventory();
-
-        Debug.Log("Home Score: " + homeScore);
+        bankedValue += player.GetInventory();
+        timeController.AddTime(player.GetInventory());
+        player.ClearInventory();
 
     }
 }
