@@ -33,19 +33,14 @@ public class FinalIslandDisplay : MonoBehaviour
         {
             houses.Add(child.GetComponent<SpriteRenderer>());
         }
-
-        Debug.Log("" + houses.Count + " houses");
-
     }
 
     private void RenderHouses()
     {
-        Debug.Log("" + Upgrades.population + " population");
         for (int i = 0; i < houses.Count; i++)
         {
             ((SpriteRenderer)houses[i]).enabled = (i < Upgrades.population);
 
         }
-
     }
 }
