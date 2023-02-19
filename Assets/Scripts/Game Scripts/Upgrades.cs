@@ -11,7 +11,7 @@ public static class Upgrades
     public static float sprintMultiplier = 2.0f;
     public static bool hasSprint = true;
 
-    private static bool hasRam = true;
+    private static bool hasSpyglass = false;
     public static bool hasCompass = true;
     public static bool hasWizard = false;
 
@@ -20,7 +20,7 @@ public static class Upgrades
         moveSpeed = 10f;
         sprintMultiplier = 2.0f;
         hasSprint = true;
-        hasRam = false;
+        hasSpyglass = false;
         hasCompass = false;
         hasWizard = false;
     }
@@ -37,6 +37,10 @@ public static class Upgrades
                 case 2:
                     // Captain
                     hasCompass = true;
+                    break;
+                case 3:
+                    // Cartographer
+                    hasSpyglass = true;
                     break;
                 default:
                     // code block
