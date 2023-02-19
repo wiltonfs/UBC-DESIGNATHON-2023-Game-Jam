@@ -6,9 +6,8 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     private int inventory;
-    [SerializeField] private TextMeshProUGUI fishCount;
-
     private Rigidbody2D myBody;
+    private HUDController HUD;
 
     private ArrayList passengers = new ArrayList();
 
@@ -16,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
+        HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
         ClearInventory();
         Upgrades.Reset();
 
@@ -69,19 +69,21 @@ public class PlayerController : MonoBehaviour
     public void ClearInventory()
     {
         inventory = 0;
-        fishCount.text = "x 0";
+        HUD.setFish(inventory);
+        HUD.hidePassenger();
         passengers = new ArrayList();
     }
 
     public void AddInventory(int count)
     {
         inventory += count;
-        fishCount.text = "x " + inventory;
+        HUD.setFish(inventory);
     }
 
     public void PickUp(int personID)
     {
         passengers.Add(personID);
+        HUD.setPassenger(personID);
 
     }
 }

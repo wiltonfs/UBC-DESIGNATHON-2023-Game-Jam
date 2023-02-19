@@ -6,15 +6,15 @@ using TMPro;
 
 public class TimeController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timer;
-
     [SerializeField] private int gameTimer = 15;
+    private HUDController HUD;
     private PlayerController player;
     private float tick;
     // Start is called before the first frame update
     void Start()
     {
         DataManager.SECONDS_SURVIVED = 0;
+        HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         
     }
@@ -39,21 +39,9 @@ public class TimeController : MonoBehaviour
         
     }
 
-    private string TimeToString(int time)
-    {
-        string ret = "" + (time / 60) + ":";
-
-        if ((time % 60) < 10)
-            ret += "0";
-        ret += (time % 60);
-
-        return ret;
-
-    }
-
     private void DisplayTimes()
     {
-        timer.text = TimeToString(gameTimer);
+        HUD.setTime(gameTimer);
     }
 
     public void AddTime(int addedTime)
