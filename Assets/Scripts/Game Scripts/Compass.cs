@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
-    private Transform player;
+    private Rigidbody2D player;
     private float rotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         float x = player.position.x;
         float y = player.position.y;
-        if (x != 0)
+        if (x > 0)
         {
-            rotation = -1f * Mathf.Rad2Deg * Mathf.Atan(y / x) * x / Mathf.Abs(x);
-        } 
-        else if (y != 0)
+            rotation = 180f + Mathf.Rad2Deg * Mathf.Atan(y / x);
+
+        } else
         {
-            rotation = -90f * y / Mathf.Abs(y);
+            rotation = Mathf.Rad2Deg * Mathf.Atan(y / x);
         }
-        Debug.Log("Expected Rotation: " +  rotation);
-        this.transform.rotation = Quaternion.Euler(0, 0, rotation - 143f);
+
+        this.transform.rotation = Quaternion.Euler(0, 0, rotation - 90f);
     }
 }

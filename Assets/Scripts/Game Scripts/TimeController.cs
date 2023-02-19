@@ -16,7 +16,7 @@ public class TimeController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        gameTimer = 15;
+        gameTimer = 45;
         
     }
 
