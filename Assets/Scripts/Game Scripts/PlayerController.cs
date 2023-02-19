@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private int passenger;
     private Rigidbody2D myBody;
     private HUDController HUD;
+    [SerializeField] private SpriteRenderer passive;
+    [SerializeField] private SpriteRenderer active;
 
     private ArrayList passengers = new ArrayList();
 
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        Vector2 pos = myBody.position;
+        Vector2 pos = Vector2.zero;
         float speed = Upgrades.moveSpeed;
 
         //If have speed upgrade
@@ -52,7 +54,19 @@ public class PlayerController : MonoBehaviour
             pos.x -= speed * Time.deltaTime;
         }
 
-        myBody.position = pos;
+        myBody.position += pos;
+
+        if (pos == Vector2.zero)
+        {
+            active.enabled = false;
+            passive.enabled = true;
+
+        } else
+        {
+            active.enabled = true;
+            passive.enabled = false;
+
+        }
 
 
     }
