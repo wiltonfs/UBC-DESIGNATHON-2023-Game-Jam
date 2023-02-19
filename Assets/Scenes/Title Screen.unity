@@ -1582,6 +1582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844feacb935e2394d8758f5f40c7d005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 8300000, guid: 93c1dd7a6b852a04bab4ceddfa39be47, type: 3}
+  - {fileID: 8300000, guid: 5028591e0fdfd8e498ddd54562b41763, type: 3}
+  - {fileID: 8300000, guid: 5574fcd30cc9c0340bb7326ca0dc7963, type: 3}
+  - {fileID: 8300000, guid: 36701cef79e00844d928c4cd308597fd, type: 3}
 --- !u!4 &683463077
 Transform:
   m_ObjectHideFlags: 0
@@ -1607,10 +1612,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3589643971101020770, guid: 2a9f993911716284880464c2e4562d91, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 93c1dd7a6b852a04bab4ceddfa39be47, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5028591e0fdfd8e498ddd54562b41763, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.1
   Loop: 0
   Mute: 0
   Spatialize: 0

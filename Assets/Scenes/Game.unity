@@ -2536,8 +2536,8 @@ MonoBehaviour:
   messageBackground: {fileID: 2008900508}
   addText: {fileID: 1995528245}
   thankClips:
-  - {fileID: 8300000, guid: 93684dc0239cd6c4fb54ec378c7768fb, type: 3}
-  - {fileID: 8300000, guid: 0c62d782b7ea3004f9a3b8bbc1e60643, type: 3}
+  - {fileID: 8300000, guid: 6e0e217ea33a11b4db2a1d422c75bd00, type: 3}
+  - {fileID: 8300000, guid: e85fa1abb40b9c747a44cbc4b653c3bd, type: 3}
   - {fileID: 8300000, guid: 713a9fee66b582a4091cd1aea3fa851b, type: 3}
   - {fileID: 8300000, guid: 407a3fb3a9b81db44b03b3caa95190d4, type: 3}
   passengers:
@@ -3150,7 +3150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personID: 1
   calls:
-  - {fileID: 8300000, guid: 23687fcc775535d42ab17068bf9b4bb8, type: 3}
+  - {fileID: 8300000, guid: 8ad85d276d77d1e43a8383d62aa853dc, type: 3}
+  - {fileID: 8300000, guid: afeef46413a5c804799f4b12d39ebe17, type: 3}
+  - {fileID: 8300000, guid: 9af29cc6ebb337248957d17b688c79ec, type: 3}
 --- !u!82 &603724411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12305,7 +12307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personID: 2
   calls:
-  - {fileID: 8300000, guid: 0c5607fca3cf03145870c851e89ff05a, type: 3}
+  - {fileID: 8300000, guid: 97094c19671e86c4095bb0ff6bc68d6f, type: 3}
+  - {fileID: 8300000, guid: e7c5a9886b989e248b1e9b9f3d88755e, type: 3}
+  - {fileID: 8300000, guid: f238497f3fd1dcc4d90aa1d2325bef69, type: 3}
 --- !u!50 &2101198396
 Rigidbody2D:
   serializedVersion: 4
