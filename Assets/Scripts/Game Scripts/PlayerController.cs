@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2;
-
     private int inventory;
 
     private Rigidbody2D myBody;
+    private Upgrades upgradeManager;
 
-    //The Cook, The Sailmaker, The Cartographer, The Carpenter, The Navigator, The Wizard
+    
 
-    private bool hasSprint = true;
-    private float sprintMultiplier = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        upgradeManager = GameObject.Find("Upgrade Manager").GetComponent<Upgrades>();
         myBody = GetComponent<Rigidbody2D>();
         ClearInventory();
 
@@ -29,12 +26,12 @@ public class PlayerController : MonoBehaviour
     {
 
         Vector2 pos = myBody.position;
-        float speed = moveSpeed;
+        float speed = upgradeManager.GetSpeed();
 
         //If have speed upgrade
-        if (Input.GetKey(KeyCode.LeftShift) && hasSprint)
+        if (Input.GetKey(KeyCode.LeftShift) && upgradeManager.Sprint())
         {
-            speed *= sprintMultiplier;
+            speed *= upgradeManager.GetSprintMultiplier();
         }
 
         if (Input.GetKey("w"))
