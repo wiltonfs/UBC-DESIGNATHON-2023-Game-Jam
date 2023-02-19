@@ -48,6 +48,8 @@ public static class DataManager
 
     public static void SAVE_PLAYER_PREFS()
     {
+        return;
+        // TODO: remove return statement to save player preferences
         for (int i = 0; i < LEADER_BOARD_SIZE; i++)
         {
             PlayerPrefs.SetInt("PLAYER_SCORE" + i, SCORES[i]);
