@@ -28,6 +28,13 @@ public class TimeController : MonoBehaviour
     {
         DisplayTimes();
 
+        if (Time.time >= populationTimer)
+        {
+            HUD.AddMessage("Population has grown!");
+            Upgrades.population++;
+            populationTimer = Time.time + populationDelay;
+        }
+
         if (Time.time >= tick)
         {
             tick = Time.time + 1f;
@@ -41,11 +48,7 @@ public class TimeController : MonoBehaviour
             }
         }
 
-        if (Time.time > populationTimer)
-        {
-            HUD.AddMessage("Population has grown!");
-            populationTimer = Time.time + populationDelay;
-        }
+        
         
     }
 
