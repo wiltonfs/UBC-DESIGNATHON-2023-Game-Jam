@@ -10,6 +10,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timer;
 
     [SerializeField] private Image passenger;
+    [SerializeField] private Sprite[] passengers;
 
 
     private ArrayList log;
@@ -37,6 +38,7 @@ public class HUDController : MonoBehaviour
 
     public void setPassenger(int passengerID)
     {
+        passenger.sprite = passengers[passengerID - 1];
 
     }
 

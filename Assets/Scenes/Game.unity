@@ -829,8 +829,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
-  m_sharedMaterial: {fileID: -2617148817475689654, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2332,6 +2332,11 @@ MonoBehaviour:
   fishCount: {fileID: 1670110134}
   timer: {fileID: 224818624}
   passenger: {fileID: 1694405814}
+  passengers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &483820688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3791971658283178804, guid: d428d1c3b2698b048b76dc449e210414, type: 3}
@@ -4163,8 +4168,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ship
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
-  m_sharedMaterial: {fileID: -2617148817475689654, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7550,8 +7555,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x 1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
-  m_sharedMaterial: {fileID: -2617148817475689654, guid: 22480e9e32a8a794bb15344ee049e668, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
