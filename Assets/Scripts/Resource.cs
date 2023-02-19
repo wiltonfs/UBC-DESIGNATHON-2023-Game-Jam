@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceScript : MonoBehaviour
+public class Resource : MonoBehaviour
 {
     [SerializeField] private int resourceValue = 1;
+    //First val is where it starts, second val is where it ends
     [SerializeField] private Vector2 spawnRange;
 
     private PlayerController player;
@@ -25,16 +26,16 @@ public class ResourceScript : MonoBehaviour
 
     private void Spawn()
     {
-        this.transform.position = new Vector2(Random.Range(-1 * spawnRange.x, spawnRange.x), Random.Range(-1 * spawnRange.y, spawnRange.y));
+        float radius = Random.Range(spawnRange.x, spawnRange.y);
+        float theta = Random.Range(0, Mathf.PI * 2);
+        float x = radius * Mathf.Cos(theta);
+        float y = radius * Mathf.Sin(theta);
+        transform.position = new Vector2(x, y);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
 
         player.AddInventory(resourceValue);
-
-        Spawn();
-        //Add score
-        //Delete
-        //Destroy(this);
+        Destroy(gameObject);
     }
 }
