@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     private int inventory;
+    [SerializeField] private TextMeshProUGUI fishCount;
 
     private Rigidbody2D myBody;
 
@@ -67,12 +69,14 @@ public class PlayerController : MonoBehaviour
     public void ClearInventory()
     {
         inventory = 0;
+        fishCount.text = "x 0";
         passengers = new ArrayList();
     }
 
     public void AddInventory(int count)
     {
         inventory += count;
+        fishCount.text = "x " + inventory;
     }
 
     public void PickUp(int personID)
