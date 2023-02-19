@@ -31,7 +31,7 @@ public class Person : MonoBehaviour
         } 
         else
         {
-            HUD.AddMessage("Boat Full!");
+            //HUD.AddMessage("Boat Full!");
         }
     }
 }

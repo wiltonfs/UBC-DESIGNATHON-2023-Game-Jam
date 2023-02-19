@@ -92,4 +92,9 @@ public class PlayerController : MonoBehaviour
     {
         return passenger == -1;
     }
+
+    public bool Full()
+    {
+        return inventory > 19;
+    }
 }

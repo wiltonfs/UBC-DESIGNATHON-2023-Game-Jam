@@ -7,15 +7,19 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     [SerializeField] private int gameTimer = 15;
+    [SerializeField] private int populationDelay = 45;
     private HUDController HUD;
     private PlayerController player;
     private float tick;
+    private float populationTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         DataManager.SECONDS_SURVIVED = 0;
         HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        populationTimer = Time.time + populationDelay;
         
     }
 
@@ -36,6 +40,12 @@ public class TimeController : MonoBehaviour
                 SceneManager.LoadScene("Game Lost");
             }
         }
+
+        if (Time.time > populationTimer)
+        {
+            HUD.AddMessage("Population has grown!");
+            populationTimer = Time.time + populationDelay;
+        }
         
     }
 
@@ -47,5 +57,6 @@ public class TimeController : MonoBehaviour
     public void AddTime(int addedTime)
     {
         gameTimer += addedTime;
+        HUD.addTime(addedTime);
     }
 }

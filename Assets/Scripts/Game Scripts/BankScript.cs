@@ -28,7 +28,8 @@ public class BankScript : MonoBehaviour
     {
         Upgrades.Recruit(player.GetPassenger());
         HUD.Recruit(player.GetPassenger());
-        timeController.AddTime(player.GetInventory());
+        //BURN RATE
+        timeController.AddTime((int) (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population)));
         player.ClearInventory();
 
     }

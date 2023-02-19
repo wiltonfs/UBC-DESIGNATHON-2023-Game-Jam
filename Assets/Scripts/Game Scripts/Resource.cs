@@ -21,8 +21,10 @@ public class Resource : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
-        player.AddInventory(resourceValue);
-        Destroy(gameObject);
+        if (!player.Full()) {
+            player.AddInventory(resourceValue);
+            Destroy(gameObject);
+        }
+        
     }
 }

@@ -14,6 +14,7 @@ public static class Upgrades
     public static bool hasSpyglass = false;
     public static bool hasCompass = true;
     public static bool hasWizard = false;
+    public static int population = 1;
 
     public static void Reset()
     {
@@ -23,6 +24,7 @@ public static class Upgrades
         hasSpyglass = false;
         hasCompass = false;
         hasWizard = false;
+        population = 1;
     }
     public static void Recruit(int passenger)
     {

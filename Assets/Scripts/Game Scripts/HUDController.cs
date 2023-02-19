@@ -10,11 +10,15 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI message;
     [SerializeField] private Image messageBackground;
+    [SerializeField] private TextMeshProUGUI addText;
 
     [SerializeField] private Image[] passengers;
     private float alpha;
     private ArrayList log;
     private bool displaying = false;
+    private int time;
+    private float addedTimeShow = 0;
+    private float addedTimeFade = 0.75f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,14 @@ public class HUDController : MonoBehaviour
             message.text = (string) log[0];
             alpha = 1f;
             UpdateMsgAlpha(alpha);
+        }
+
+        if (addedTimeShow > 0)
+        {
+            addedTimeShow -= Time.deltaTime;
+        } else
+        {
+            addText.alpha -= Time.deltaTime / addedTimeFade;
         }
         
     }
@@ -99,7 +111,7 @@ public class HUDController : MonoBehaviour
 
     public void setFish(int fish)
     {
-        fishCount.text = "x " + fish;
+        fishCount.text = " " + fish + "/20";
     }
 
     public void hidePassenger()
@@ -115,9 +127,19 @@ public class HUDController : MonoBehaviour
         passengers[passengerID - 1].enabled = true;
     }
 
-    public void setTime(int time)
+    public void setTime(int t)
     {
-        timer.text = TimeToString(time);
+        time = t;
+        timer.text = TimeToString(t);
+    }
+
+    public void addTime(int t)
+    {
+        addText.text = "+ " + TimeToString(t);
+        addedTimeShow = 1f;
+        addText.alpha = 1f;
+        setTime(time + t);
+
     }
 
     private string TimeToString(int time)
