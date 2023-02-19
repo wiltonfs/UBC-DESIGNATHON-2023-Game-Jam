@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class DisplayStats : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int gameTime = 30;
+    private int gameTime;
     private Text test;
     void Start()
-    { 
+    {
+        gameTime = DataManager.SECONDS_SURVIVED;
         test = GetComponent<Text>();
     }
 
