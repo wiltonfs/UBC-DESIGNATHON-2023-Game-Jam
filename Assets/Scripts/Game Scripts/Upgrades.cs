@@ -19,7 +19,7 @@ public static class Upgrades
 
     public static void Reset()
     {
-        capacity = 25;
+        capacity = 15;
         moveSpeed = 10f;
         sprintMultiplier = 1.8f;
         hasSprint = true;
@@ -50,7 +50,7 @@ public static class Upgrades
                 break;
             case 4:
                 //Builder
-                capacity = 50;
+                capacity = 25;
                 break;
             default:
                 // code block
