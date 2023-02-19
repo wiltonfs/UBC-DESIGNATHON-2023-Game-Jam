@@ -112,6 +112,12 @@ public class HUDController : MonoBehaviour
                 audioSource.Play();
                 AddMessage("Rescued the Cartographer!\nVision Improved!");
                 break;
+            case 4:
+                // Builder
+                audioSource.clip = thankClips[3];
+                audioSource.Play();
+                AddMessage("Rescued the Carpenter!\nCargo Expanded!");
+                break;
             default:
                 // code block
                 break;

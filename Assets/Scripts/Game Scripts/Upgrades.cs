@@ -48,6 +48,10 @@ public static class Upgrades
                 // Cartographer
                 hasSpyglass = true;
                 break;
+            case 4:
+                //Builder
+                capacity = 50;
+                break;
             default:
                 // code block
                 break;

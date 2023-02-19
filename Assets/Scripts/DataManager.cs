@@ -7,11 +7,6 @@ public static class DataManager
     public static int SECONDS_SURVIVED;
     public static string PLAYER_NAME;
 
-    public static float MAIN_VOLUME;
-    public static float MUSIC_VOLUME;
-    public static float FX_VOLUME;
-
-
     public static string[] PLAYERS;
     public static int[] SCORES;
     public static int LEADER_BOARD_SIZE = 3;
@@ -25,10 +20,6 @@ public static class DataManager
             SCORES[i] = PlayerPrefs.GetInt("PLAYER_SCORE" + i);
             PLAYERS[i] = PlayerPrefs.GetString("PLAYER_NAME" + i, "[N/A]");
         }
-
-        MAIN_VOLUME = PlayerPrefs.GetFloat("MAIN_VOLUME", 0.75f);
-        MUSIC_VOLUME = PlayerPrefs.GetFloat("MUSIC_VOLUME", 1f);
-        FX_VOLUME = PlayerPrefs.GetFloat("FX_VOLUME", 1f);
     }
     
     public static bool SUBMIT_SCORE() { 
@@ -55,10 +46,6 @@ public static class DataManager
             PlayerPrefs.SetInt("PLAYER_SCORE" + i, SCORES[i]);
             PlayerPrefs.SetString("PLAYER_NAME" + i, PLAYERS[i]);
         }
-
-        PlayerPrefs.SetFloat("MAIN_VOLUME", MAIN_VOLUME);
-        PlayerPrefs.SetFloat("MUSIC_VOLUME", MUSIC_VOLUME);
-        PlayerPrefs.SetFloat("FX_VOLUME", FX_VOLUME);
 
         PlayerPrefs.Save();
 
