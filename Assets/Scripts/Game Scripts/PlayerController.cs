@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D myBody;
 
+    private ArrayList passengers = new ArrayList();
+
     // Start is called before the first frame update
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
         ClearInventory();
+        Upgrades.Reset();
 
     }
 
@@ -56,13 +59,25 @@ public class PlayerController : MonoBehaviour
         return inventory;
     }
 
+    public ArrayList GetPassengers()
+    {
+        return passengers;
+    }
+
     public void ClearInventory()
     {
         inventory = 0;
+        passengers = new ArrayList();
     }
 
     public void AddInventory(int count)
     {
         inventory += count;
+    }
+
+    public void PickUp(int personID)
+    {
+        passengers.Add(personID);
+
     }
 }

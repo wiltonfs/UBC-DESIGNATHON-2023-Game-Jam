@@ -27,6 +27,7 @@ public class BankScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         bankedValue += player.GetInventory();
+        Upgrades.Recruit(player.GetPassengers());
         timeController.AddTime(player.GetInventory());
         player.ClearInventory();
 

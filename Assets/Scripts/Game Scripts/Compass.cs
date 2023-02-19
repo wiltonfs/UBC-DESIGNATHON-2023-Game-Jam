@@ -5,11 +5,13 @@ using UnityEngine;
 public class Compass : MonoBehaviour
 {
     private Rigidbody2D player;
+    private SpriteRenderer spriteRenderer;
     private float rotation;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         
     }
@@ -17,10 +19,8 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Upgrades.hasCompass)
-        {
-            
-        }
+        spriteRenderer.enabled = Upgrades.hasCompass;
+        
         float x = player.position.x;
         float y = player.position.y;
         if (x > 0)
