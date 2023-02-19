@@ -12,7 +12,7 @@ public class NameSubmit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DataManager.LOAD_PLAYER_PREFS();
     }
 
     // Update is called once per frame
@@ -47,7 +47,6 @@ public class NameSubmit : MonoBehaviour
         if (name.Length < 11 && name.Length > 0)
         {
             DataManager.PLAYER_NAME = name;
-            DataManager.LOAD_SCOREBOARD();
             SceneManager.LoadScene("Title Screen");
         } 
         else
