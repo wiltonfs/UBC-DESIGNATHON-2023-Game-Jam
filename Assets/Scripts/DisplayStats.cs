@@ -18,6 +18,13 @@ public class DisplayStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        test.text = "You Survived for: " + gameTime + " seconds";
+        if (gameTime < 60)
+        {
+            test.text = "You Survived for: " + gameTime + " seconds";
+        }
+        else
+        {
+            test.text = "You Survived for: " + gameTime / 60 + " minutes and " + gameTime % 60 + " seconds";
+        }
     }
 }

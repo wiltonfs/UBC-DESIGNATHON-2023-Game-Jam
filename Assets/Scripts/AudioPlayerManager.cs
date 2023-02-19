@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioPlayerManager : MonoBehaviour
 {
-    private static AudioPlayerManager instance = null;
+    private static AudioPlayerManager instance;
     private AudioSource audioSource;
 
     private void Awake()
@@ -29,6 +31,9 @@ public class AudioPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }
