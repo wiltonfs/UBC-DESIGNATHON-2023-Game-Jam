@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -27,6 +28,12 @@ public class TimeController : MonoBehaviour
         if (Time.time > tick)
         {
             gameTimer -= 1;
+            if (gameTimer < 1)
+            {
+                //Change Scene
+                SceneManager.LoadScene("Game Lost");
+            }
+
             tick = Time.time + 1;
         }
         
