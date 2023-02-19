@@ -7,15 +7,10 @@ public class PlayerController : MonoBehaviour
     private int inventory;
 
     private Rigidbody2D myBody;
-    private Upgrades upgradeManager;
-
-    
-
 
     // Start is called before the first frame update
     void Start()
     {
-        upgradeManager = GameObject.Find("Upgrade Manager").GetComponent<Upgrades>();
         myBody = GetComponent<Rigidbody2D>();
         ClearInventory();
 
@@ -26,12 +21,12 @@ public class PlayerController : MonoBehaviour
     {
 
         Vector2 pos = myBody.position;
-        float speed = upgradeManager.GetSpeed();
+        float speed = Upgrades.moveSpeed;
 
         //If have speed upgrade
-        if (Input.GetKey(KeyCode.LeftShift) && upgradeManager.Sprint())
+        if (Input.GetKey(KeyCode.LeftShift) && Upgrades.hasSprint)
         {
-            speed *= upgradeManager.GetSprintMultiplier();
+            speed *= Upgrades.sprintMultiplier;
         }
 
         if (Input.GetKey("w"))

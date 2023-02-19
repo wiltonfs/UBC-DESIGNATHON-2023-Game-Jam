@@ -17,6 +17,10 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Upgrades.hasCompass)
+        {
+            
+        }
         float x = player.position.x;
         float y = player.position.y;
         if (x > 0)
