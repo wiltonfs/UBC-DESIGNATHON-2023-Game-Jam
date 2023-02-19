@@ -6,11 +6,13 @@ public class Person : MonoBehaviour
 {
     [SerializeField] private int personID = 1;
     private PlayerController player;
+    private HUDController HUD;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
 
     }
 
@@ -22,8 +24,14 @@ public class Person : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
-        player.PickUp(personID);
-        Destroy(gameObject);
+        if (player.NoPassenger())
+        {
+            player.PickUp(personID);
+            Destroy(gameObject);
+        } 
+        else
+        {
+            HUD.AddMessage("Boat Full!");
+        }
     }
 }

@@ -24,28 +24,28 @@ public static class Upgrades
         hasCompass = false;
         hasWizard = false;
     }
-    public static void Recruit(ArrayList passengers)
+    public static void Recruit(int passenger)
     {
-        foreach (int p in passengers)
+        switch (passenger)
         {
-            switch (p)
-            {
-                case 1:
-                    // Wizard
-                    hasWizard = true;
-                    break;
-                case 2:
-                    // Captain
-                    hasCompass = true;
-                    break;
-                case 3:
-                    // Cartographer
-                    hasSpyglass = true;
-                    break;
-                default:
-                    // code block
-                    break;
-            }
+            case -1:
+                //Nothing
+                break;
+            case 1:
+                // Wizard
+                hasWizard = true;
+                break;
+            case 2:
+                // Captain
+                hasCompass = true;
+                break;
+            case 3:
+                // Cartographer
+                hasSpyglass = true;
+                break;
+            default:
+                // code block
+                break;
         }
     }
 }
