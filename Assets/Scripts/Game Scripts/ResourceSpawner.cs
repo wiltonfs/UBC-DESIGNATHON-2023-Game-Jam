@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResourceSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject resource;
+    [SerializeField] private Vector2 spawnRange;
     [SerializeField] private int startCount;
     [SerializeField] private float spawnInterval;
 
@@ -30,7 +31,16 @@ public class ResourceSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject newResource = Instantiate(resource);
+        float radius = Random.Range(spawnRange.x, spawnRange.y);
+        float theta = Random.Range(0, Mathf.PI * 2);
+        float x = radius * Mathf.Cos(theta);
+        float y = radius * Mathf.Sin(theta);
+        x += transform.position.x;
+        y += transform.position.y;
+
+        Vector2 newPos = new Vector2(x, y);
+
+        GameObject newResource = Instantiate(resource, newPos, Quaternion.identity);
         newResource.transform.SetParent(this.transform);
     }
 }
