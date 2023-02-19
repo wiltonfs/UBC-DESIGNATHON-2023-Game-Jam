@@ -6,8 +6,7 @@ using TMPro;
 
 public class TimeController : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro timer;
-    [SerializeField] private TextMeshPro collectedTimer;
+    [SerializeField] private TextMeshProUGUI timer;
 
     [SerializeField] private int gameTimer = 15;
     private PlayerController player;
@@ -55,7 +54,6 @@ public class TimeController : MonoBehaviour
     private void DisplayTimes()
     {
         timer.text = TimeToString(gameTimer);
-        collectedTimer.text = "+ " + TimeToString(player.GetInventory());
     }
 
     public void AddTime(int addedTime)
