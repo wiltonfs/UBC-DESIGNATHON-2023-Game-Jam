@@ -11,7 +11,7 @@ public static class Upgrades
     public static float sprintMultiplier = 2.0f;
     public static bool hasSprint = true;
 
-    private static bool hasSpyglass = false;
+    public static bool hasSpyglass = false;
     public static bool hasCompass = true;
     public static bool hasWizard = false;
 
