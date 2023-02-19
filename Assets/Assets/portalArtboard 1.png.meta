@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 600dac908d3fa05469cd961337cf6f1c
+guid: 12e0b8e4179190d459c99402e7b17fd0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,97 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fishjumpArtboard 1_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 394
-        width: 334
-        height: 165
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 6, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32663dc117446704192dd86123cc5b43
-      internalID: 34716113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fishjumpArtboard 1_1
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 399
-        width: 355
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02577c473fba89845bb94027b57c3b9b
-      internalID: 1112071745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fishjumpArtboard 1_2
+      name: portalArtboard 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
-        width: 365
-        height: 229
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 678c20188d37e8e4891c0a32631285d8
-      internalID: -1209454136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fishjumpArtboard 1_3
-      rect:
-        serializedVersion: 2
-        x: 453
-        y: 57
-        width: 383
-        height: 187
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25e8fe73c52f52e44afe086f6a547545
-      internalID: -591924172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fishjumpArtboard 1_4
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 377
-        width: 214
-        height: 58
+        y: 0
+        width: 200
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +131,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b03692e037a2b6449a5284a2e363396
-      internalID: 1145857660
+      spriteID: 5b930db0feeed244cb2b235c513ebdbe
+      internalID: 1961315367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portalArtboard 1_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfa5ea40c677de4b94bcc1a52026226
+      internalID: -1452704624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portalArtboard 1_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225c925c179ddcb43b6c8d62e40138c4
+      internalID: -1856872446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portalArtboard 1_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580f05380f2ef284a91c7ffcf6c6c9ed
+      internalID: -1820723884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portalArtboard 1_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e109d52c75e7db84b8d52304b312830e
+      internalID: 1888455845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portalArtboard 1_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c079480b6c46a3343bf63bfb19dda9c5
+      internalID: -1794212932
       vertices: []
       indices: 
       edges: []
@@ -232,11 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fishjumpArtboard 1_0: 34716113
-      fishjumpArtboard 1_1: 1112071745
-      fishjumpArtboard 1_2: -1209454136
-      fishjumpArtboard 1_3: -591924172
-      fishjumpArtboard 1_4: 1145857660
+      portalArtboard 1_0: 1961315367
+      portalArtboard 1_1: -1452704624
+      portalArtboard 1_2: -1856872446
+      portalArtboard 1_3: -1820723884
+      portalArtboard 1_4: 1888455845
+      portalArtboard 1_5: -1794212932
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
