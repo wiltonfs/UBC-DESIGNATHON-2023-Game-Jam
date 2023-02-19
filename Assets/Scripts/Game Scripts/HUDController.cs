@@ -111,7 +111,7 @@ public class HUDController : MonoBehaviour
 
     public void setFish(int fish)
     {
-        fishCount.text = " " + fish + "/20";
+        fishCount.text = " " + fish + "/" + Upgrades.capacity;
     }
 
     public void hidePassenger()

@@ -109,6 +109,6 @@ public class PlayerController : MonoBehaviour
 
     public bool Full()
     {
-        return inventory > 19;
+        return inventory >= Upgrades.capacity;
     }
 }

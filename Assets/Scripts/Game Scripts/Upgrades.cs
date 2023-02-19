@@ -10,6 +10,7 @@ public static class Upgrades
     public static float moveSpeed = 10f;
     public static float sprintMultiplier = 1.8f;
     public static bool hasSprint = true;
+    public static int capacity = 25;
 
     public static bool hasSpyglass = false;
     public static bool hasCompass = true;
@@ -18,6 +19,7 @@ public static class Upgrades
 
     public static void Reset()
     {
+        capacity = 25;
         moveSpeed = 10f;
         sprintMultiplier = 1.8f;
         hasSprint = true;
