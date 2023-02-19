@@ -25,17 +25,17 @@ public class TimeController : MonoBehaviour
     {
         DisplayTimes();
 
-        if (Time.time > tick)
+        if (Time.time >= tick)
         {
+            tick = Time.time + 1f;
             DataManager.SECONDS_SURVIVED += 1;
             gameTimer -= 1;
+
             if (gameTimer < 1)
             {
                 //Change Scene
                 SceneManager.LoadScene("Game Lost");
             }
-
-            tick = Time.time + 1;
         }
         
     }

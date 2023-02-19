@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceValue: 1
-  spawnRange: {x: 8, y: 20}
+  spawnRange: {x: 8, y: 50}
 --- !u!58 &6620126951746817663
 CircleCollider2D:
   m_ObjectHideFlags: 0
