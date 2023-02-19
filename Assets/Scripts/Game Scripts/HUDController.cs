@@ -9,8 +9,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fishCount;
     [SerializeField] private TextMeshProUGUI timer;
 
-    [SerializeField] private Image passenger;
-    [SerializeField] private Sprite[] passengers;
+    [SerializeField] private Image[] passengers;
 
 
     private ArrayList log;
@@ -33,13 +32,15 @@ public class HUDController : MonoBehaviour
 
     public void hidePassenger()
     {
-
+        foreach (Image img in passengers)
+        {
+            img.enabled = false;
+        }
     }
 
     public void setPassenger(int passengerID)
     {
-        passenger.sprite = passengers[passengerID - 1];
-
+        passengers[passengerID - 1].enabled = true;
     }
 
     public void setTime(int time)
