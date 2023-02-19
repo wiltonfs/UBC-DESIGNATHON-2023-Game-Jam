@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Compass : MonoBehaviour
 {
     private Rigidbody2D player;
-    private SpriteRenderer spriteRenderer;
-    [SerializeField] private GameObject distanceHome;
     private float rotation;
-    private TMP_Text tmpText;
+    [SerializeField] private TextMeshProUGUI distanceText;
+    [SerializeField] private Image arrow;
 
     // Start is called before the first frame update
     void Start()
     {
-        tmpText = distanceHome.GetComponent<TMP_Text>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         
     }
@@ -24,11 +21,12 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spriteRenderer.enabled = Upgrades.hasCompass;
-        tmpText.enabled = Upgrades.hasCompass;
+        arrow.enabled = Upgrades.hasCompass;
+        distanceText.enabled = Upgrades.hasCompass;
 
         float x = player.position.x;
         float y = player.position.y;
+        float distance = Mathf.Sqrt(x * x + y * y);
         if (x > 0)
         {
             rotation = 180f + Mathf.Rad2Deg * Mathf.Atan(y / x);
@@ -37,7 +35,7 @@ public class Compass : MonoBehaviour
         {
             rotation = Mathf.Rad2Deg * Mathf.Atan(y / x);
         }
-
-        this.transform.rotation = Quaternion.Euler(0, 0, rotation - 90f);
+        distanceText.text = "" + (int) distance + "m";
+        this.transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 }

@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     private int inventory;
+    private int passenger;
     private Rigidbody2D myBody;
     private HUDController HUD;
 
@@ -61,9 +62,9 @@ public class PlayerController : MonoBehaviour
         return inventory;
     }
 
-    public ArrayList GetPassengers()
+    public int GetPassenger()
     {
-        return passengers;
+        return passenger;
     }
 
     public void ClearInventory()
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
         inventory = 0;
         HUD.setFish(inventory);
         HUD.hidePassenger();
-        passengers = new ArrayList();
+        passenger = -1;
     }
 
     public void AddInventory(int count)
@@ -82,8 +83,13 @@ public class PlayerController : MonoBehaviour
 
     public void PickUp(int personID)
     {
-        passengers.Add(personID);
+        passenger = personID;
         HUD.setPassenger(personID);
 
+    }
+
+    public bool NoPassenger()
+    {
+        return passenger == -1;
     }
 }

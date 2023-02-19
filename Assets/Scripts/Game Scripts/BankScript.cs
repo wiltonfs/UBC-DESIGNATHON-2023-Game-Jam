@@ -6,14 +6,14 @@ public class BankScript : MonoBehaviour
 {
     private PlayerController player;
     private TimeController timeController;
-    private int bankedValue;
+    private HUDController HUD;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         timeController = GameObject.Find("TimeController").GetComponent<TimeController>();
-        bankedValue = 0;
+        HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
 
     }
 
@@ -26,8 +26,8 @@ public class BankScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        bankedValue += player.GetInventory();
-        Upgrades.Recruit(player.GetPassengers());
+        Upgrades.Recruit(player.GetPassenger());
+        HUD.Recruit(player.GetPassenger());
         timeController.AddTime(player.GetInventory());
         player.ClearInventory();
 
