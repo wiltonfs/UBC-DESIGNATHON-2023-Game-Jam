@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LoadIslandState : MonoBehaviour
 {
-    //Implement max and min level once determined
-    private int lvl = 0;
-    [SerializeField] Sprite[] island_state; 
-    
+    [SerializeField] private GameObject[] island_state;
+    private Dictionary<string, GameObject> island_state_dict;
+
+    private void Awake()
+    {
+        foreach (GameObject building in island_state)
+        {
+            island_state_dict.Add(building.name, building);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Image>().sprite = island_state[lvl];
+        foreach (string building in DataManager.BUILDINGS)
+        {
+            island_state_dict[building].SetActive(true);
+        }
     }
 
     // Update is called once per frame

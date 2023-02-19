@@ -6,6 +6,7 @@ public static class DataManager
 {
     public static int SECONDS_SURVIVED;
     public static string PLAYER_NAME;
+    public static string[] BUILDINGS;
 
 
     public static string[] PLAYERS;
