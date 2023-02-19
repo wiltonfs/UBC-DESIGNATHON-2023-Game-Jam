@@ -9,14 +9,14 @@ public class TimeController : MonoBehaviour
     [SerializeField] private TextMeshPro timer;
     [SerializeField] private TextMeshPro collectedTimer;
 
-    private int gameTimer;
+    [SerializeField] private int gameTimer = 15;
     private PlayerController player;
     private float tick;
     // Start is called before the first frame update
     void Start()
     {
+        DataManager.SECONDS_SURVIVED = 0;
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        gameTimer = 45;
         
     }
 
@@ -27,6 +27,7 @@ public class TimeController : MonoBehaviour
 
         if (Time.time > tick)
         {
+            DataManager.SECONDS_SURVIVED += 1;
             gameTimer -= 1;
             if (gameTimer < 1)
             {
