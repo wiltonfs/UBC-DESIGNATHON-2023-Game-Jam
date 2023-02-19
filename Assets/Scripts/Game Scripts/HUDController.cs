@@ -11,6 +11,8 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI message;
     [SerializeField] private Image messageBackground;
     [SerializeField] private TextMeshProUGUI addText;
+    [SerializeField] private AudioClip[] thankClips;
+    private AudioSource audioSource;
 
     [SerializeField] private Image[] passengers;
     private float alpha;
@@ -24,6 +26,7 @@ public class HUDController : MonoBehaviour
     void Start()
     {
         log = new ArrayList();
+        audioSource = GetComponent<AudioSource>();
         HideMsg();
     }
 
@@ -93,14 +96,20 @@ public class HUDController : MonoBehaviour
                 break;
             case 1:
                 // Wizard
+                audioSource.clip = thankClips[0];
+                audioSource.Play();
                 AddMessage("Rescued the Wizard!\nBoost Upgraded!");
                 break;
             case 2:
                 // Captain
+                audioSource.clip = thankClips[1];
+                audioSource.Play();
                 AddMessage("Rescued the Captain!\nCompass Equipped!");
                 break;
             case 3:
                 // Cartographer
+                audioSource.clip = thankClips[2];
+                audioSource.Play();
                 AddMessage("Rescued the Cartographer!\nVision Improved!");
                 break;
             default:
