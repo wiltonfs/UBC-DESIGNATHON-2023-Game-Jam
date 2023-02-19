@@ -7,7 +7,7 @@ public static class Upgrades
 
     //The Cook, The Sailmaker, The Cartographer, The Carpenter, The Navigator, The Wizard
     //Movement mechanics
-    public static float moveSpeed = 16f;
+    public static float moveSpeed = 10f;
     public static float sprintMultiplier = 2.0f;
     public static bool hasSprint = true;
 
@@ -17,7 +17,7 @@ public static class Upgrades
 
     public static void Reset()
     {
-        moveSpeed = 16f;
+        moveSpeed = 10f;
         sprintMultiplier = 2.0f;
         hasSprint = true;
         hasRam = false;
