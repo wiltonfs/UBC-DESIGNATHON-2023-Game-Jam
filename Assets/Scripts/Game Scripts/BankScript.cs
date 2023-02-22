@@ -69,7 +69,12 @@ public class BankScript : MonoBehaviour
         //BURN RATE
         if (player.GetInventory() > 0)
         {
-            timeController.AddTime((int)(1f + (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population))));
+            float addedTime = 1f + (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population));
+            if (addedTime < 1f)
+            {
+                addedTime = 1f;
+            }
+            timeController.AddTime((int) addedTime);
         }
         player.ClearInventory();
 
