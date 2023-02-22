@@ -84,7 +84,10 @@ public class HUDController : MonoBehaviour
 
     public void AddMessage(string msg)
     {
-        log.Add(msg);
+        if (!log.Contains(msg))
+        {
+            log.Add(msg);
+        }
     }
 
     public void Recruit(int passenger)
@@ -150,10 +153,13 @@ public class HUDController : MonoBehaviour
 
     public void addTime(int t)
     {
-        addText.text = "+ " + TimeToString(t);
-        addedTimeShow = 1f;
-        addText.alpha = 1f;
-        setTime(time + t);
+        if (t > 0)
+        {
+            addText.text = "+ " + TimeToString(t);
+            addedTimeShow = 1f;
+            addText.alpha = 1f;
+            setTime(time + t);
+        }
 
     }
 

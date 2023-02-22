@@ -7,10 +7,14 @@ public class Resource : MonoBehaviour
     [SerializeField] private int resourceValue = 1;
     private PlayerController player;
 
+    private HUDController HUD;
+
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
     }
 
     // Update is called once per frame
@@ -24,6 +28,9 @@ public class Resource : MonoBehaviour
         if (!player.Full()) {
             player.AddInventory(resourceValue);
             Destroy(gameObject);
+        } else
+        {
+            HUD.AddMessage("Boat Full!");
         }
         
     }

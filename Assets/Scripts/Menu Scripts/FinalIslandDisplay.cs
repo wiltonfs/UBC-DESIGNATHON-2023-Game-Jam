@@ -7,6 +7,8 @@ public class FinalIslandDisplay : MonoBehaviour
 {
     private ArrayList houses;
 
+    [SerializeField] SpriteRenderer[] characterHouses;
+
     private void Awake()
     {
     }
@@ -42,5 +44,12 @@ public class FinalIslandDisplay : MonoBehaviour
             ((SpriteRenderer)houses[i]).enabled = (i < Upgrades.population);
 
         }
+        
+        characterHouses[0].enabled = Upgrades.hasWizard;
+        characterHouses[1].enabled = Upgrades.hasCompass;
+        characterHouses[2].enabled = Upgrades.hasSpyglass;
+        characterHouses[3].enabled = Upgrades.hasCarpenter;
+
+
     }
 }

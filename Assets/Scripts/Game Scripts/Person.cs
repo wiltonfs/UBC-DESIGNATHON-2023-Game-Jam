@@ -13,11 +13,14 @@ public class Person : MonoBehaviour
     private PlayerController player;
     private HUDController HUD;
 
+    private float baseWait = 1f;
+    private float randomWait = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        callTimer = Time.time + 2f + Random.Range(0f, 2f);
+        callTimer = Time.time + baseWait + Random.Range(0f, randomWait);
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
 
@@ -28,9 +31,9 @@ public class Person : MonoBehaviour
     {
         if (Time.time > callTimer)
         {
-            audioSource.clip = calls[(int)Random.Range(0, calls.Length - 1)];
+            audioSource.clip = calls[(int)Random.Range(0, calls.Length)];
             audioSource.Play();
-            callTimer = Time.time + 2f + Random.Range(0f, 2f);
+            callTimer = Time.time + baseWait + Random.Range(0f, randomWait);
         }
         
     }

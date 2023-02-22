@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BankScript : MonoBehaviour
 {
+    [SerializeField] GameObject[] characterHouses;
     private PlayerController player;
     private TimeController timeController;
     private HUDController HUD;
@@ -20,6 +21,11 @@ public class BankScript : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         timeController = GameObject.Find("TimeController").GetComponent<TimeController>();
         HUD = GameObject.Find("HUD Controller").GetComponent<HUDController>();
+
+        for (int i = 0; i < 4; i++)
+        {
+            characterHouses[i].SetActive(false);
+        }
 
     }
 
@@ -57,11 +63,19 @@ public class BankScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Upgrades.Recruit(player.GetPassenger());
-        HUD.Recruit(player.GetPassenger());
+        int passenger = player.GetPassenger();
+        Upgrades.Recruit(passenger);
+        HUD.Recruit(passenger);
         //BURN RATE
-        timeController.AddTime((int) (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population)));
+        if (player.GetInventory() > 0)
+        {
+            timeController.AddTime((int)(1f + (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population))));
+        }
         player.ClearInventory();
 
+        if (passenger > 0)
+        {
+            characterHouses[passenger-1].SetActive(true);
+        }
     }
 }

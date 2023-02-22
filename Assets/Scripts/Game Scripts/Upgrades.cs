@@ -15,6 +15,7 @@ public static class Upgrades
     public static bool hasSpyglass = false;
     public static bool hasCompass = true;
     public static bool hasWizard = false;
+    public static bool hasCarpenter = false;
     public static int population = 1;
 
     public static void Reset()
@@ -25,6 +26,7 @@ public static class Upgrades
         hasSprint = true;
         hasSpyglass = false;
         hasCompass = false;
+        hasCarpenter = false;
         hasWizard = false;
         population = 1;
     }
@@ -51,6 +53,7 @@ public static class Upgrades
             case 4:
                 //Builder
                 capacity = 25;
+                hasCarpenter = true;
                 break;
             default:
                 // code block
