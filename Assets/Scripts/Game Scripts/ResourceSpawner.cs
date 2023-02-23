@@ -13,6 +13,7 @@ public class ResourceSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = Time.time + spawnInterval;
         for (int i = 0; i < startCount; i++)
             Spawn();
     }
@@ -23,8 +24,8 @@ public class ResourceSpawner : MonoBehaviour
 
         if (Time.time >= timer)
         {
-            Spawn();
-            timer += spawnInterval;
+            Spawn(); //Spawn a fish
+            timer = Time.time + spawnInterval;
         }
         
     }
