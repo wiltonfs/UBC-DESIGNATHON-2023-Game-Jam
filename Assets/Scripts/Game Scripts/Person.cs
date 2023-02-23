@@ -40,14 +40,17 @@ public class Person : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (player.NoPassenger())
+        if (col.gameObject.name == "Player")
         {
-            player.PickUp(personID);
-            Destroy(gameObject);
-        } 
-        else
-        {
-            //HUD.AddMessage("Boat Full!");
+            if (player.NoPassenger())
+            {
+                player.PickUp(personID);
+                Destroy(gameObject);
+            }
+            else
+            {
+                HUD.AddMessage("Already Occupied!\nReturn home!");
+            }
         }
     }
 }

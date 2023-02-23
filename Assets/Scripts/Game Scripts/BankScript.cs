@@ -63,24 +63,27 @@ public class BankScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        int passenger = player.GetPassenger();
-        Upgrades.Recruit(passenger);
-        HUD.Recruit(passenger);
-        //BURN RATE
-        if (player.GetInventory() > 0)
+        if (col.gameObject.name == "Player")
         {
-            float addedTime = 1f + (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population));
-            if (addedTime < 1f)
+            int passenger = player.GetPassenger();
+            Upgrades.Recruit(passenger);
+            HUD.Recruit(passenger);
+            //BURN RATE
+            if (player.GetInventory() > 0)
             {
-                addedTime = 1f;
+                float addedTime = 1f + (player.GetInventory() * (1f - 0.1f * (float)Upgrades.population));
+                if (addedTime < 1f)
+                {
+                    addedTime = 1f;
+                }
+                timeController.AddTime((int)addedTime);
             }
-            timeController.AddTime((int) addedTime);
-        }
-        player.ClearInventory();
+            player.ClearInventory();
 
-        if (passenger > 0)
-        {
-            characterHouses[passenger-1].SetActive(true);
+            if (passenger > 0)
+            {
+                characterHouses[passenger - 1].SetActive(true);
+            }
         }
     }
 }

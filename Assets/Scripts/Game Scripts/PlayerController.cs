@@ -37,19 +37,19 @@ public class PlayerController : MonoBehaviour
             speed *= Upgrades.sprintMultiplier;
         }
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
             pos.y += speed * Time.deltaTime;
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
             pos.y -= speed * Time.deltaTime;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += speed * Time.deltaTime;
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             pos.x -= speed * Time.deltaTime;
         }

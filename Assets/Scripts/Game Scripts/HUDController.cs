@@ -101,7 +101,7 @@ public class HUDController : MonoBehaviour
                 // Wizard
                 audioSource.clip = thankClips[0];
                 audioSource.Play();
-                AddMessage("Rescued the Wizard!\nBoost Upgraded!");
+                AddMessage("Rescued the Wizard!\nSpeed Increased!");
                 break;
             case 2:
                 // Captain
@@ -149,6 +149,16 @@ public class HUDController : MonoBehaviour
     {
         time = t;
         timer.text = TimeToString(t);
+
+        if (t > 5)
+        {
+            timer.color = Color.white;
+            timer.fontSize = 36f;
+        } else
+        {
+            timer.color = Color.red;
+            timer.fontSize = 36f + 4f * Mathf.Sin(Time.time * 6f);
+        }
     }
 
     public void addTime(int t)

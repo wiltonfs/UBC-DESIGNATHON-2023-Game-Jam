@@ -25,13 +25,17 @@ public class Resource : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!player.Full()) {
-            player.AddInventory(resourceValue);
-            Destroy(gameObject);
-        } else
+        if (col.gameObject.name == "Player")
         {
-            HUD.AddMessage("Boat Full!");
+            if (!player.Full())
+            {
+                player.AddInventory(resourceValue);
+                Destroy(gameObject);
+            }
+            else
+            {
+                HUD.AddMessage("Boat Full!\nReturn home!");
+            }
         }
-        
     }
 }

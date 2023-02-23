@@ -9,7 +9,7 @@ public static class Upgrades
     //Movement mechanics
     public static float moveSpeed = 10f;
     public static float sprintMultiplier = 1.8f;
-    public static bool hasSprint = true;
+    public static bool hasSprint = false;
     public static int capacity = 25;
 
     public static bool hasSpyglass = false;
@@ -21,9 +21,9 @@ public static class Upgrades
     public static void Reset()
     {
         capacity = 15;
-        moveSpeed = 10f;
+        moveSpeed = 16f;
         sprintMultiplier = 1.8f;
-        hasSprint = true;
+        hasSprint = false;
         hasSpyglass = false;
         hasCompass = false;
         hasCarpenter = false;
@@ -40,6 +40,7 @@ public static class Upgrades
             case 1:
                 // Wizard
                 hasWizard = true;
+                moveSpeed = 24f;
                 sprintMultiplier = 2.4f;
                 break;
             case 2:
